@@ -10,17 +10,11 @@ Output string must be two numbers separated by a single space, and highest numbe
 
 function highAndLow(numbers){
   //Split String into array
-  numbers.split(' ')
-
-  //array of strings into array of numbers
-  const numberArray = []
-  numbers.forEach(str => {
-    numberArray.push(Number(str));
-  });
+  numbers = numbers.split(' ').map(Number)
     
   //Math.min and Math.max the array
-  let high = Math.max(numberArray)
-  let low = Math.min(numberArray)
+  let high = Math.max(...numbers)
+  let low = Math.min(...numbers)
   //return the concatonated  "Min Max"
   return `${high} ${low}`
 }
